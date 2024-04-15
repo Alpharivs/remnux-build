@@ -1,0 +1,17 @@
+---
+- name: "Install Kitty"
+  apt:
+    name: kitty
+    state: present
+  become: true
+  become_method: sudo
+
+- name: "Copy Kitty Color.ini"
+  copy:
+    src: "{{ role_path }}/files/color.ini"
+    dest: "{{ ansible_env.HOME }}/.config/kitty/"
+
+- name: "Copy Kitty kitty.conf"
+  copy:
+    src: "{{ role_path }}/files/kitty.conf"
+    dest: "{{ ansible_env.HOME }}/.config/kitty/"

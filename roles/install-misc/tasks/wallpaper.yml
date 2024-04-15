@@ -1,0 +1,7 @@
+---
+- name: "Set Wallpaper"
+  copy: 
+    src: "{{ role_path }}/files/remnux-logo.png"
+    dest: /usr/share/remnux/remnux-logo.png
+  become: true
+  become_method: sudo

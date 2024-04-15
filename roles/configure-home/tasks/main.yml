@@ -1,0 +1,15 @@
+---
+- name: "Create Malware Directory"
+  file:
+    path: "{{ ansible_env.HOME }}/Malware"
+    state: directory
+
+- name: "Create Reversing Directory"
+  file:
+    path: "{{ ansible_env.HOME }}/Reversing"
+    state: directory
+
+- name: "Create Forensics Directory"
+  file:
+    path: "{{ ansible_env.HOME }}/Forensics"
+    state: directory

@@ -1,0 +1,11 @@
+---
+- name: "Cloning p10k for User"
+  shell: |
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+
+- name: "Cloning p10k for Root"
+  shell: |
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+  become: true
+  become_method: sudo
+

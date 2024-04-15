@@ -1,0 +1,7 @@
+---
+- include_tasks: apt-apps.yml
+- include_tasks: p10k.yml
+- include_tasks: nvchad.yml
+- include_tasks: fonts.yml
+- include_tasks: wallpaper.yml
+- include_tasks: ida-dracula.yml

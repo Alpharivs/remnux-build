@@ -1,0 +1,10 @@
+---
+- name: "Installing Packages"
+  package:
+    name:
+      - zsh
+      - lsd-musl
+      - bat
+    state: latest
+  become: true
+  become_method: sudo

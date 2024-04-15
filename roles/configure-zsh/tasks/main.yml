@@ -1,0 +1,61 @@
+---
+- name: "Set zshrc as default shell"
+  shell: |
+    chsh -s /bin/zsh remnux
+    chsh -s /bin/zsh root
+  become: true
+  become_method: sudo
+  
+- name: "Copy zshrc"
+  copy: 
+    src: "{{ role_path }}/files/.zshrc"
+    dest: "{{ ansible_env.HOME }}"
+
+- name: "Copy zshrc for Root"
+  copy: 
+    src: "{{ role_path }}/files/.zshrc"
+    dest: /root/
+  become: true
+  become_method: sudo
+
+- name: "Create zsh-syntax-highlighting Directory"
+  file:
+    path: /usr/share/zsh-syntax-highlighting
+    state: directory
+  become: true
+  become_method: sudo
+
+- name: "Copy zsh-syntax-highlighting Files"
+  copy: 
+    src: "{{ role_path }}/files/zsh-syntax-highlighting/"
+    dest: /usr/share/zsh-syntax-highlighting/
+  become: true
+  become_method: sudo
+
+- name: "Create zsh-autosuggestions Directory"
+  file:
+    path: /usr/share/zsh-autosuggestions
+    state: directory
+  become: true
+  become_method: sudo
+
+- name: "Copy zsh-autosuggestions Files"
+  copy: 
+    src: "{{ role_path }}/files/zsh-autosuggestions/"
+    dest: /usr/share/zsh-autosuggestions/
+  become: true
+  become_method: sudo
+
+- name: "Create zsh-sudo Directory"
+  file:
+    path: /usr/share/zsh-sudo
+    state: directory
+  become: true
+  become_method: sudo
+
+- name: "Copy zsh-sudo Files"
+  copy: 
+    src: "{{ role_path }}/files/zsh-sudo/sudo.plugin.zsh"
+    dest: /usr/share/zsh-sudo/
+  become: true
+  become_method: sudo

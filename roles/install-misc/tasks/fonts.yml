@@ -1,0 +1,24 @@
+---
+- name: "Downloading Hack Fonts"
+  shell: |
+    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.0/Hack.zip -O hack.zip
+  ignore_errors: true
+
+- name: "Moving Hack Fonts"
+  shell: |
+    unzip -o hack.zip -d /usr/share/fonts/
+    rm hack.zip
+  become: true
+  become_method: sudo
+
+- name: "Downloading Meslo Fonts"
+  shell: |
+    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.0/Meslo.zip -O meslo.zip
+  ignore_errors: true
+
+- name: "Moving Meslo Fonts"
+  shell: |
+    unzip -o meslo.zip -d /usr/share/fonts/
+    rm meslo.zip
+  become: true
+  become_method: sudo

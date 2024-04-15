@@ -1,0 +1,21 @@
+---
+- name: "Downloading Nvim"
+  shell: |
+    wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage -O nvim
+    chmod +x nvim
+
+- name: "Moving Nvim to Bin folder"
+  shell: |
+    mv nvim /usr/bin/
+  become: true
+  become_method: sudo
+
+- name: "Installing Nvchad for User"
+  shell: |
+    git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+
+- name: "Installing Nvchad for Root"
+  shell: |
+    git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+  become: true
+  become_method: sudo

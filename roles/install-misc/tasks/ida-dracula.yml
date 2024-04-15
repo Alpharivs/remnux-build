@@ -1,0 +1,4 @@
+---
+- name: "Downloading IDA dracula theme"
+  shell: |
+    git clone https://github.com/dracula/ida.git ~/repos/ida-dracula
