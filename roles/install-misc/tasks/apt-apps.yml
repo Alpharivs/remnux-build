@@ -5,6 +5,7 @@
       - zsh
       - lsd-musl
       - bat
+      - sqlitebrowser
     state: latest
   become: true
   become_method: sudo
